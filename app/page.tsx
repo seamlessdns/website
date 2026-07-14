@@ -41,7 +41,10 @@ function SystemMap() {
         <div className="map-source"><span className="source-icon stack-icon">◇</span><span>Platforms</span></div>
         <div className="map-source"><span className="source-icon agent-icon">◎</span><span>Agents</span></div>
       </div>
-      <div className="protocol-connector" aria-hidden="true"><span>Open protocol</span></div>
+      <div className="source-connectors" aria-hidden="true">
+        <i /><i /><i />
+        <span>Open protocol</span>
+      </div>
       <div className="seamless-node">
         <span className="s-mark" aria-hidden="true">S</span><strong>Seamless</strong>
         <span className="node-role">Coordination layer</span>
@@ -52,7 +55,6 @@ function SystemMap() {
       </div>
       <div className="provider-node">
         <span className="server-icon" aria-hidden="true"><i /><i /><i /></span><strong>Providers</strong>
-        <span className="provider-points" aria-hidden="true"><i /><i /><i /><i /><i /></span>
       </div>
     </div>
   );
@@ -227,4 +229,3 @@ export default function Home() {
     </main>
   );
 }
-
