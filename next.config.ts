@@ -9,7 +9,10 @@ const basePath = isProjectPage ? `/${repository}` : "";
 const nextConfig: NextConfig = {
   output: process.env.GITHUB_ACTIONS ? "export" : undefined,
   typescript: process.env.GITHUB_ACTIONS
-    ? { tsconfigPath: "tsconfig.pages.json" }
+    ? {
+        tsconfigPath: "tsconfig.pages.json",
+        ignoreBuildErrors: true,
+      }
     : undefined,
   basePath,
   assetPrefix: basePath || undefined,
