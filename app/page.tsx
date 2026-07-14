@@ -36,35 +36,22 @@ function ArrowIcon() {
 function SystemMap() {
   return (
     <div className="system-map" aria-label="Developers, platforms, and agents connect through Seamless to Internet service providers">
-      <div className="map-source source-developers">
-        <span className="source-icon">&lt;/&gt;</span>
-        <span>Developers</span>
+      <div className="source-row">
+        <div className="map-source"><span className="source-icon">&lt;/&gt;</span><span>Developers</span></div>
+        <div className="map-source"><span className="source-icon stack-icon">◇</span><span>Platforms</span></div>
+        <div className="map-source"><span className="source-icon agent-icon">◎</span><span>Agents</span></div>
       </div>
-      <div className="map-source source-platforms">
-        <span className="source-icon stack-icon">◇</span>
-        <span>Platforms</span>
-      </div>
-      <div className="map-source source-agents">
-        <span className="source-icon agent-icon">◎</span>
-        <span>Agents</span>
-      </div>
-
-      <div className="protocol-line" aria-hidden="true">
-        <span>Open protocol</span>
-      </div>
-
+      <div className="protocol-connector" aria-hidden="true"><span>Open protocol</span></div>
       <div className="seamless-node">
-        <span className="s-mark" aria-hidden="true">S</span>
-        <strong>Seamless</strong>
+        <span className="s-mark" aria-hidden="true">S</span><strong>Seamless</strong>
         <span className="node-role">Coordination layer</span>
       </div>
-
-      <div className="request-label">Config request ↓</div>
-      <div className="response-label">↑ Provider response</div>
-
+      <div className="transfer-lanes" aria-hidden="true">
+        <div className="transfer-lane request-lane"><span>Config request</span><i /></div>
+        <div className="transfer-lane response-lane"><span>Provider response</span><i /></div>
+      </div>
       <div className="provider-node">
-        <span className="server-icon" aria-hidden="true"><i /><i /><i /></span>
-        <strong>Providers</strong>
+        <span className="server-icon" aria-hidden="true"><i /><i /><i /></span><strong>Providers</strong>
         <span className="provider-points" aria-hidden="true"><i /><i /><i /><i /><i /></span>
       </div>
     </div>
@@ -240,3 +227,4 @@ export default function Home() {
     </main>
   );
 }
+
