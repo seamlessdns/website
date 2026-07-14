@@ -221,9 +221,25 @@ h1 {
   line-height: 1; white-space: nowrap; transform: translate(-50%,-50%);
   font-family: var(--font-mono); font-size: 10px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase;
 }
+.protocol-connector::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  bottom: 0;
+  border-left: 2px solid var(--blue);
+  transform: translateX(-50%);
+}
 .protocol-connector::after {
-  content: "↓"; position: absolute; left: 50%; bottom: 10px; color: var(--blue); transform: translateX(-50%);
-  font-family: var(--font-mono); font-size: 26px; line-height: 1;
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 11px;
+  height: 11px;
+  border-right: 2px solid var(--blue);
+  border-bottom: 2px solid var(--blue);
+  transform: translateX(-50%) rotate(45deg);
 }
 .seamless-node {
   position: relative; z-index: 2; height: 88px; padding: 0 28px; display: flex; align-items: center;
@@ -809,7 +825,8 @@ footer > p {
   .source-icon { font-size: 18px; }.stack-icon { font-size: 24px; }.agent-icon { font-size: 21px; }
   .protocol-connector { margin-inline: 11%; }
   .protocol-connector span { padding-inline: 8px; font-size: 7px; }
-  .protocol-connector::after { bottom: 8px; font-size: 20px; }
+  .protocol-connector::before { top: 20px; }
+  .protocol-connector::after { width: 9px; height: 9px; }
   .seamless-node { height: 68px; padding: 0 13px; }
   .seamless-node .s-mark { font-size: 27px; }
   .seamless-node strong { margin-left: 8px; font-size: 15px; }
@@ -898,4 +915,3 @@ footer > p {
     animation-iteration-count: 1 !important;
   }
 }
-
