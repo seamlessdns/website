@@ -220,11 +220,17 @@ export default function Home() {
       <footer>
         <a className="wordmark footer-wordmark" href="#top"><span className="wordmark-mark" aria-hidden="true">S</span><span>Seamless</span></a>
         <p>Open infrastructure for configuration, discovery, and verification.</p>
-        <div>
+        <div className="footer-links">
           <a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.domainconnect.org/" target="_blank" rel="noreferrer">Domain Connect</a>
           <a href="https://datatracker.ietf.org/wg/dconn/about/" target="_blank" rel="noreferrer">IETF</a>
         </div>
+        <p className="footer-legal">
+          Copyright © SeamlessDNS a Series of LF Projects, LLC
+          <br />
+          For web site terms of use, trademark policy and other project policies please see{" "}
+          <a href="https://lfprojects.org/" target="_blank" rel="noreferrer">lfprojects.org</a>.
+        </p>
       </footer>
     </main>
   );
