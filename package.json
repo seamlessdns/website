@@ -8,7 +8,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
     "test": "npm run build && node --test tests/static-export.test.mjs",
     "lint": "eslint ."
   },

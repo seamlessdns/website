@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ExternalArrow, SiteFooter, SiteHeader } from "./components/site-chrome";
 
 const githubUrl = "https://github.com/seamlessdns";
 
@@ -31,10 +31,6 @@ const principles = [
   ["Multi-operator", "Infrastructure and artifacts should be portable, mirrorable, and safe to operate independently."],
 ];
 
-function ArrowIcon() {
-  return <span className="external-arrow" aria-hidden="true">↗︎</span>;
-}
-
 function SystemMap() {
   return (
     <div className="system-map" aria-label="Developers, platforms, and agents connect through Seamless to Internet service providers">
@@ -65,22 +61,7 @@ function SystemMap() {
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Seamless home">
-          <span className="wordmark-mark" aria-hidden="true">S</span>
-          <span>Seamless</span>
-        </a>
-        <nav aria-label="Primary navigation">
-          <a href="#why">Why Seamless</a>
-          <a href="#building">What we&apos;re building</a>
-          <a href="#governance">Governance</a>
-          <a href="#community">Community</a>
-          <Link href="/sponsors/">Sponsor</Link>
-        </nav>
-        <a className="button button-small button-outline" href={githubUrl} target="_blank" rel="noreferrer">
-          GitHub <ArrowIcon />
-        </a>
-      </header>
+      <SiteHeader page="home" />
 
       <section className="hero" id="top">
         <div className="hero-copy">
@@ -91,7 +72,7 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#building">Explore the roadmap <span aria-hidden="true">↓</span></a>
-            <a className="button button-outline" href={githubUrl} target="_blank" rel="noreferrer">View on GitHub <ArrowIcon /></a>
+            <a className="button button-outline" href={githubUrl} target="_blank" rel="noreferrer">View on GitHub <ExternalArrow /></a>
           </div>
         </div>
         <SystemMap />
@@ -179,8 +160,8 @@ export default function Home() {
             <p>Domain Connect is a deployed open protocol for configuring DNS across software services and DNS providers. The IETF DCONN Working Group is standardizing the protocol while protecting interoperability with today&apos;s ecosystem.</p>
           </div>
           <div className="callout-links">
-            <a href="https://www.domainconnect.org/" target="_blank" rel="noreferrer">Domain Connect <ArrowIcon /></a>
-            <a href="https://datatracker.ietf.org/wg/dconn/about/" target="_blank" rel="noreferrer">IETF DCONN <ArrowIcon /></a>
+            <a href="https://www.domainconnect.org/" target="_blank" rel="noreferrer">Domain Connect <ExternalArrow /></a>
+            <a href="https://datatracker.ietf.org/wg/dconn/about/" target="_blank" rel="noreferrer">IETF DCONN <ExternalArrow /></a>
           </div>
         </div>
       </section>
@@ -215,26 +196,12 @@ export default function Home() {
           <p>We&apos;re bringing together service platforms, DNS providers, registrars, standards contributors, and open-source developers to build shared infrastructure in the open.</p>
         </div>
         <div className="community-actions">
-          <a className="button button-light" href={githubUrl} target="_blank" rel="noreferrer">Join on GitHub <ArrowIcon /></a>
-          <a className="button button-dark-outline" href="https://www.ietf.org/mailman/listinfo/dconn" target="_blank" rel="noreferrer">Join IETF DCONN <ArrowIcon /></a>
+          <a className="button button-light" href={githubUrl} target="_blank" rel="noreferrer">Join on GitHub <ExternalArrow /></a>
+          <a className="button button-dark-outline" href="https://www.ietf.org/mailman/listinfo/dconn" target="_blank" rel="noreferrer">Join IETF DCONN <ExternalArrow /></a>
         </div>
       </section>
 
-      <footer>
-        <a className="wordmark footer-wordmark" href="#top"><span className="wordmark-mark" aria-hidden="true">S</span><span>Seamless</span></a>
-        <p>Open infrastructure for configuration, discovery, and verification.</p>
-        <div className="footer-links">
-          <a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.domainconnect.org/" target="_blank" rel="noreferrer">Domain Connect</a>
-          <a href="https://datatracker.ietf.org/wg/dconn/about/" target="_blank" rel="noreferrer">IETF</a>
-        </div>
-        <p className="footer-legal">
-          Copyright © SeamlessDNS a Series of LF Projects, LLC
-          <br />
-          For web site terms of use, trademark policy and other project policies please see{" "}
-          <a href="https://lfprojects.org/" target="_blank" rel="noreferrer">lfprojects.org</a>.
-        </p>
-      </footer>
+      <SiteFooter page="home" />
     </main>
   );
 }

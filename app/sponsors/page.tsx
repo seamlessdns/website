@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import type { ReactNode } from "react";
+import { ExternalArrow, SiteFooter, SiteHeader } from "../components/site-chrome";
 import styles from "./sponsors.module.css";
 
 export const metadata: Metadata = {
@@ -13,10 +13,6 @@ export const metadata: Metadata = {
 
 const githubUrl = "https://github.com/seamlessdns";
 const sourceUrl = "https://github.com/seamlessdns/website/blob/main/SPONSORS.md";
-
-function ArrowIcon() {
-  return <span className="external-arrow" aria-hidden="true">↗︎</span>;
-}
 
 function inlineMarkdown(value: string): ReactNode[] {
   return value
@@ -134,21 +130,7 @@ export default function SponsorsPage() {
 
   return (
     <main>
-      <header className="site-header">
-        <Link className="wordmark" href="/" aria-label="Seamless home">
-          <span className="wordmark-mark" aria-hidden="true">S</span>
-          <span>Seamless</span>
-        </Link>
-        <nav aria-label="Primary navigation">
-          <Link href="/#why">Why Seamless</Link>
-          <Link href="/#building">What we&apos;re building</Link>
-          <Link href="/#governance">Governance</Link>
-          <Link href="/#community">Community</Link>
-        </nav>
-        <a className="button button-small button-outline" href={githubUrl} target="_blank" rel="noreferrer">
-          GitHub <ArrowIcon />
-        </a>
-      </header>
+      <SiteHeader page="sponsors" />
 
       <section className={styles.hero}>
         <p className="eyebrow"><span /> Sponsorship</p>
@@ -159,7 +141,7 @@ export default function SponsorsPage() {
         <div className={styles.sourceNote}>
           <span>Canonical source</span>
           <a href={sourceUrl} target="_blank" rel="noreferrer">
-            Read SPONSORS.md on GitHub <ArrowIcon />
+            Read SPONSORS.md on GitHub <ExternalArrow />
           </a>
         </div>
         <MarkdownDocument source={markdown} />
@@ -173,26 +155,12 @@ export default function SponsorsPage() {
         </div>
         <div className="community-actions">
           <a className="button button-light" href={githubUrl} target="_blank" rel="noreferrer">
-            Join on GitHub <ArrowIcon />
+            Join on GitHub <ExternalArrow />
           </a>
         </div>
       </section>
 
-      <footer>
-        <Link className="wordmark footer-wordmark" href="/"><span className="wordmark-mark" aria-hidden="true">S</span><span>Seamless</span></Link>
-        <p>Open infrastructure for configuration, discovery, and verification.</p>
-        <div className="footer-links">
-          <a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.domainconnect.org/" target="_blank" rel="noreferrer">Domain Connect</a>
-          <a href="https://datatracker.ietf.org/wg/dconn/about/" target="_blank" rel="noreferrer">IETF</a>
-        </div>
-        <p className="footer-legal">
-          Copyright © SeamlessDNS a Series of LF Projects, LLC
-          <br />
-          For web site terms of use, trademark policy and other project policies please see{" "}
-          <a href="https://lfprojects.org/" target="_blank" rel="noreferrer">lfprojects.org</a>.
-        </p>
-      </footer>
+      <SiteFooter page="sponsors" />
     </main>
   );
 }
