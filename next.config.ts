@@ -1,13 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: process.env.GITHUB_ACTIONS ? "export" : undefined,
-  typescript: process.env.GITHUB_ACTIONS
-    ? {
-        tsconfigPath: "tsconfig.pages.json",
-        ignoreBuildErrors: true,
-      }
-    : undefined,
+  output: "export",
   trailingSlash: true,
   images: { unoptimized: true },
 };
