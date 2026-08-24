@@ -16,9 +16,6 @@ export const metadata: Metadata = {
   title: "Seamless — The open connection layer for the Internet",
   description:
     "Open, neutral infrastructure for configuring domains and coordinating services across providers.",
-  other: {
-    "codex-preview": "development",
-  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -32,9 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
     </html>
