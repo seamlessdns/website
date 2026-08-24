@@ -13,6 +13,10 @@ test("exports the homepage and links to sponsors", async () => {
 
   assert.match(html, /The open connection layer for the Internet\./);
   assert.match(html, /href=["']\/sponsors\/["']/);
+  assert.match(
+    html,
+    /<link rel="canonical" href="https:\/\/seamlessconnect\.org\/?"/,
+  );
 });
 
 test("exports the sponsor page from the canonical sponsor content", async () => {
@@ -25,6 +29,10 @@ test("exports the sponsor page from the canonical sponsor content", async () => 
   assert.ok(title, "SPONSORS.md must contain an H1");
   assert.match(html, new RegExp(title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   assert.match(html, /Read SPONSORS\.md on GitHub/);
+  assert.match(
+    html,
+    /<link rel="canonical" href="https:\/\/seamlessconnect\.org\/sponsors\/"/,
+  );
 });
 
 test("exports the favicon", async () => {

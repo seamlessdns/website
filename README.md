@@ -1,6 +1,6 @@
 # Seamless website
 
-The public website for [Seamless](https://seamlessdns.org/), built with the
+The public website for [Seamless](https://seamlessconnect.org/), built with the
 Next.js App Router and published as a static export on GitHub Pages.
 
 ## Requirements
@@ -28,7 +28,7 @@ npm test
 ```
 
 `npm test` runs the production build and then verifies the exported homepage,
-sponsor page, and favicon. The static site is written to `out/`.
+sponsor page, canonical URLs, and favicon. The static site is written to `out/`.
 
 ## Sponsorship content
 
@@ -40,7 +40,10 @@ be edited in the Markdown file rather than duplicated in the page component.
 
 The GitHub Actions workflow validates every pull request targeting `main`.
 Pushes to `main` and manually dispatched runs also upload `out/` and deploy it
-to GitHub Pages. The custom domain is `seamlessdns.org`.
+to GitHub Pages. The primary custom domain is `seamlessconnect.org`.
+The legacy `seamlessdns.org` domain is served from the separate
+[`seamlessdns-redirect`](https://github.com/seamlessdns/seamlessdns-redirect)
+repository and redirects visitors to the matching path on the primary domain.
 
 ## Repository structure
 
