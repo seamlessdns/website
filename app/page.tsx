@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const githubUrl = "https://github.com/seamlessdns";
 
 const roadmap = [
@@ -73,6 +75,7 @@ export default function Home() {
           <a href="#building">What we&apos;re building</a>
           <a href="#governance">Governance</a>
           <a href="#community">Community</a>
+          <Link href="/sponsors/">Sponsor</Link>
         </nav>
         <a className="button button-small button-outline" href={githubUrl} target="_blank" rel="noreferrer">
           GitHub <ArrowIcon />
