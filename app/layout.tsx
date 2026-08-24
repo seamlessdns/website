@@ -13,6 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://seamlessconnect.org"),
+  alternates: {
+    canonical: "/",
+  },
   title: "Seamless — The open connection layer for the Internet",
   description:
     "Open, neutral infrastructure for configuring domains and coordinating services across providers.",
