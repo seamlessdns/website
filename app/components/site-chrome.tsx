@@ -59,7 +59,7 @@ export function SiteFooter({ page }: { page: "home" | "sponsors" }) {
         <a href="https://datatracker.ietf.org/wg/dconn/about/" target="_blank" rel="noreferrer">IETF</a>
       </div>
       <p className="footer-legal">
-        Copyright © SeamlessDNS a Series of LF Projects, LLC
+        Copyright © Seamless a Series of LF Projects, LLC
         <br />
         For web site terms of use, trademark policy and other project policies please see{" "}
         <a href="https://lfprojects.org/" target="_blank" rel="noreferrer">lfprojects.org</a>.
