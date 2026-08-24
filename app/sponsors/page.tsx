@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import type { ReactNode } from "react";
@@ -134,15 +135,15 @@ export default function SponsorsPage() {
   return (
     <main>
       <header className="site-header">
-        <a className="wordmark" href="/" aria-label="Seamless home">
+        <Link className="wordmark" href="/" aria-label="Seamless home">
           <span className="wordmark-mark" aria-hidden="true">S</span>
           <span>Seamless</span>
-        </a>
+        </Link>
         <nav aria-label="Primary navigation">
-          <a href="/#why">Why Seamless</a>
-          <a href="/#building">What we&apos;re building</a>
-          <a href="/#governance">Governance</a>
-          <a href="/#community">Community</a>
+          <Link href="/#why">Why Seamless</Link>
+          <Link href="/#building">What we&apos;re building</Link>
+          <Link href="/#governance">Governance</Link>
+          <Link href="/#community">Community</Link>
         </nav>
         <a className="button button-small button-outline" href={githubUrl} target="_blank" rel="noreferrer">
           GitHub <ArrowIcon />
@@ -178,7 +179,7 @@ export default function SponsorsPage() {
       </section>
 
       <footer>
-        <a className="wordmark footer-wordmark" href="/"><span className="wordmark-mark" aria-hidden="true">S</span><span>Seamless</span></a>
+        <Link className="wordmark footer-wordmark" href="/"><span className="wordmark-mark" aria-hidden="true">S</span><span>Seamless</span></Link>
         <p>Open infrastructure for configuration, discovery, and verification.</p>
         <div className="footer-links">
           <a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>
