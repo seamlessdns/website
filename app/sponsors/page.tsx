@@ -6,6 +6,9 @@ import { ExternalArrow, SiteFooter, SiteHeader } from "../components/site-chrome
 import styles from "./sponsors.module.css";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/sponsors/",
+  },
   title: "Sponsor Seamless",
   description:
     "Invest in open, neutral domain infrastructure built for long-term, cost-based operation.",
