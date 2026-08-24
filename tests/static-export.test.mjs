@@ -35,6 +35,16 @@ test("exports the sponsor page from the canonical sponsor content", async () => 
   );
 });
 
+test("does not export legacy SeamlessDNS branding", async () => {
+  const [homepage, sponsors] = await Promise.all([
+    exportedHtml("index.html"),
+    exportedHtml("sponsors/index.html"),
+  ]);
+
+  assert.doesNotMatch(homepage, /SeamlessDNS|Seamless DNS/);
+  assert.doesNotMatch(sponsors, /SeamlessDNS|Seamless DNS/);
+});
+
 test("exports the favicon", async () => {
   await access(new URL("favicon.svg", outputUrl));
 });
