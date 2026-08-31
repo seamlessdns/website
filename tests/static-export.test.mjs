@@ -58,6 +58,23 @@ test("exports the stakeholder value and champion toolkit pages", async () => {
   );
 });
 
+test("recognizes the founding sponsor and founding team", async () => {
+  const [homepage, sponsors] = await Promise.all([
+    exportedHtml("index.html"),
+    exportedHtml("sponsors/index.html"),
+  ]);
+
+  assert.match(sponsors, /Founding Sponsor/);
+  assert.match(sponsors, /Name\.com/);
+  assert.match(homepage, /Founding team/);
+  assert.match(homepage, /Brian Toresdahl/);
+  assert.match(homepage, /Pawel Kowalik/);
+  assert.match(homepage, /Sami Kerola/);
+  assert.match(homepage, /linkedin\.com\/in\/brian-toresdahl/);
+  assert.match(homepage, /linkedin\.com\/in\/pawelk/);
+  assert.match(homepage, /linkedin\.com\/in\/kerolasa/);
+});
+
 test("states the full scope and protocol-agnostic approach", async () => {
   const [homepage, sponsors, whyParticipate, toolkit] = await Promise.all([
     exportedHtml("index.html"),
