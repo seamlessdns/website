@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import type { ReactNode } from "react";
@@ -9,9 +10,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/sponsors/",
   },
-  title: "Sponsor Seamless",
+  title: "Support Seamless",
   description:
-    "Invest in open, neutral domain infrastructure built for long-term, cost-based operation.",
+    "Fund the neutral operational foundation for open, reliable domain connections.",
 };
 
 const githubUrl = "https://github.com/seamlessdns";
@@ -136,28 +137,44 @@ export default function SponsorsPage() {
       <SiteHeader page="sponsors" />
 
       <section className={styles.hero}>
-        <p className="eyebrow"><span /> Sponsorship</p>
-        <p>Shared investment for shared infrastructure.</p>
+        <p className="eyebrow"><span /> Support Seamless</p>
+        <p>Fund the common layer. Compete above it.</p>
       </section>
 
+      <nav className={styles.pageLinks} aria-label="Sponsorship resources">
+        <Link href="/sponsors/why-participate/">
+          <span>01</span>
+          <strong>Why participate</strong>
+          <p>The economic case for each part of the ecosystem.</p>
+        </Link>
+        <Link href="/sponsors/toolkit/">
+          <span>02</span>
+          <strong>Champion toolkit</strong>
+          <p>Talking points and outreach material for community advocates.</p>
+        </Link>
+      </nav>
+
       <article className={styles.document}>
+        <MarkdownDocument source={markdown} />
         <div className={styles.sourceNote}>
-          <span>Canonical source</span>
+          <span>Open source</span>
           <a href={sourceUrl} target="_blank" rel="noreferrer">
-            Read SPONSORS.md on GitHub <ExternalArrow />
+            View this page&apos;s source on GitHub <ExternalArrow />
           </a>
         </div>
-        <MarkdownDocument source={markdown} />
       </article>
 
       <section className="community-section">
         <div>
-          <p className="eyebrow"><span /> Build the connection layer with us</p>
-          <h2>Invest in infrastructure the ecosystem can share.</h2>
-          <p>Start a sponsorship conversation or participate in the project through the Seamless GitHub organization.</p>
+          <p className="eyebrow"><span /> Build the neutral foundation with us</p>
+          <h2>Invest in infrastructure the whole ecosystem can use.</h2>
+          <p>Support the two-year buildout, contribute engineering, or help another organization understand the opportunity.</p>
         </div>
         <div className="community-actions">
-          <a className="button button-light" href={githubUrl} target="_blank" rel="noreferrer">
+          <Link className="button button-light" href="/sponsors/toolkit/">
+            Use the toolkit
+          </Link>
+          <a className="button button-dark-outline" href={githubUrl} target="_blank" rel="noreferrer">
             Join on GitHub <ExternalArrow />
           </a>
         </div>
