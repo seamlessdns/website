@@ -99,6 +99,14 @@ Financial support and technical participation are deliberately separate.
 
 Sponsors fund the availability and quality of the common infrastructure—not control over its protocols or who may use it.
 
+## Founding Sponsor
+
+### Name.com
+
+Name.com is a founding sponsor of Seamless, providing early financial support, industry experience, and community advocacy to help establish neutral infrastructure for automated domain and agent operations.
+
+Its support helps capitalize the project’s initial two-year buildout while keeping technical participation and decision-making open to the broader community.
+
 ## Membership Levels
 
 | Level | Annual Contribution | Participation |
