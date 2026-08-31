@@ -31,6 +31,27 @@ const principles = [
   ["Multi-operator", "Infrastructure and artifacts should be portable, mirrorable, and safe to operate independently."],
 ];
 
+const founders = [
+  {
+    name: "Brian Toresdahl",
+    role: "Project Formation, Product, and Ecosystem Development",
+    copy: "Leading project formation, fundraising, partnerships, product, and the development of a sustainable model for neutral, public-benefit infrastructure.",
+    linkedin: "https://www.linkedin.com/in/brian-toresdahl/",
+  },
+  {
+    name: "Pawel Kowalik",
+    role: "Standards and Technical Strategy",
+    copy: "Helping shape the project’s technical direction, open architecture, and practical implementation across providers and protocols.",
+    linkedin: "https://www.linkedin.com/in/pawelk/",
+  },
+  {
+    name: "Sami Kerola",
+    role: "Technical Lead and Architect",
+    copy: "Leading the design and implementation of Seamless’s technical architecture and shared infrastructure.",
+    linkedin: "https://www.linkedin.com/in/kerolasa/",
+  },
+];
+
 function SystemMap() {
   return (
     <div className="system-map" aria-label="Developers, platforms, and agents coordinate through Seamless with providers and networks">
@@ -186,6 +207,36 @@ export default function Home() {
         <div className="governance-note">
           <strong>Technical participation is open.</strong>
           <p>Membership, sponsorship, or payment will never be required to contribute code, participate in standards work, use conformance tooling, or help shape the technical community.</p>
+        </div>
+      </section>
+
+      <section className="section team-section" id="team">
+        <div className="section-heading split-heading">
+          <div>
+            <p className="section-index">04 / Founding team</p>
+            <h2>Building the neutral layer together.</h2>
+          </div>
+          <p>Seamless was initiated by a founding team working across project strategy, standards, technical architecture, product development, partnerships, and community formation.</p>
+        </div>
+
+        <div className="team-grid">
+          {founders.map((founder, index) => (
+            <article key={founder.name}>
+              <span>0{index + 1}</span>
+              <h3>
+                <a href={founder.linkedin} target="_blank" rel="noreferrer">
+                  {founder.name} <ExternalArrow />
+                </a>
+              </h3>
+              <strong>{founder.role}</strong>
+              <p>{founder.copy}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="team-note">
+          <strong>Founders establish the project. The community governs its technical direction.</strong>
+          <p>Technical authority remains rooted in open contribution, transparent governance, and the applicable standards communities.</p>
         </div>
       </section>
 
