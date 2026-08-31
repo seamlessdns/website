@@ -45,7 +45,7 @@ test("exports the stakeholder value and champion toolkit pages", async () => {
   ]);
 
   assert.match(whyParticipate, /Invest where interoperability becomes economic value\./);
-  assert.match(whyParticipate, /Commercial opportunity remains open/);
+  assert.match(whyParticipate, /Protocol choice and commercial opportunity remain open/);
   assert.match(toolkit, /The 60-second explanation/);
   assert.match(toolkit, /Technical participation is not a membership benefit\./);
   assert.match(
