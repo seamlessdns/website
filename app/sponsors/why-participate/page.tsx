@@ -9,46 +9,54 @@ export const metadata: Metadata = {
   },
   title: "Why Participate | Seamless",
   description:
-    "How neutral domain-connection infrastructure creates value for service providers, registrars, DNS providers, and agent infrastructure.",
+    "How neutral infrastructure for domain and agent operations creates value across the Internet ecosystem.",
 };
 
 const stakeholders = [
   {
     title: "Service Providers",
-    value: "Acquire and activate customers",
-    copy: "Domain configuration often happens while a customer is adopting a paid product. A reliable connection flow can improve activation, shorten time to value, reduce abandonment, and remove a major source of support work.",
+    value: "Acquire, activate, and serve customers",
+    copy: "Cross-provider operations often happen while a customer is adopting or using a paid product. Reliable automation can improve activation, shorten time to value, reduce abandonment, and remove a major source of support work.",
     buyer: "Product, engineering, growth, platform, or ecosystem leadership",
-    work: "DNS updates, domain verification, DNSSEC, provider discovery, and embedded activation",
+    work: "Domain configuration, verification, provider discovery, authorization, and embedded activation",
   },
   {
     title: "Registrars",
-    value: "Expand distribution and retain the domain relationship",
-    copy: "Registration, transfer, nameserver, and DNSSEC workflows connect registrars to new demand. A shared layer can make registrar capabilities easier for services to adopt without requiring a separate integration for every partner.",
+    value: "Expand distribution and retain customer relationships",
+    copy: "Registration, transfer, nameserver, and DNSSEC workflows connect registrars to new demand. A shared layer can make registrar capabilities easier for services and agents to adopt without a separate integration for every partner.",
     buyer: "Product, domains, partnerships, platform, or engineering leadership",
     work: "Registration, registrar transfer, nameserver changes, DNSSEC, and registrar coordination",
   },
   {
     title: "DNS Providers",
     value: "Reduce integration cost and improve migration",
-    copy: "A consistent implementation and objective conformance tooling can reduce bespoke support, make capabilities discoverable, and create a more dependable path for customers moving into or using the provider.",
+    copy: "Consistent implementations and objective conformance tooling can reduce bespoke support, make capabilities discoverable, and create dependable paths for customers and automated systems using the provider.",
     buyer: "DNS product, engineering, ecosystem, or strategic partnerships leadership",
-    work: "DNS updates, zone transfer, DNSSEC, conformance, and provider discovery",
+    work: "DNS updates, zone transfer, DNSSEC, conformance, discovery, and authorization",
   },
   {
-    title: "Commercial Platforms and Agent Infrastructure",
+    title: "Agent Platforms and Networks",
+    value: "Coordinate safely across trust boundaries",
+    copy: "Agents need dependable ways to discover services, establish authority, verify identities and results, and coordinate actions. Some workflows may use domains or DNS; others require different protocols and trust mechanisms.",
+    buyer: "Agent platform, identity, trust, security, product, or network leadership",
+    work: "Discovery, delegated authorization, identity and capability verification, policy controls, and coordination",
+  },
+  {
+    title: "Commercial Integration Platforms",
     value: "Build differentiated products on a dependable base",
-    copy: "A neutral foundation lets commercial providers, developer platforms, and agents focus on user experience, orchestration, analytics, security, and support instead of recreating the underlying provider-access layer.",
-    buyer: "Platform, product, developer experience, agents, or corporate development leadership",
-    work: "Open APIs, authorization, discovery, policy controls, registries, and commercial services above the shared layer",
+    copy: "A neutral foundation lets commercial providers focus on experience, orchestration, analytics, security, support, and service levels instead of recreating the underlying integration and coordination layer.",
+    buyer: "Platform, product, developer experience, partnerships, or corporate development leadership",
+    work: "Embedded experiences, enterprise operations, monitoring, orchestration, and services above the shared layer",
   },
 ];
 
-const transactions = [
-  ["DNS zone update", "Highest direct value for service activation; operational and distribution value for infrastructure providers."],
-  ["DNSSEC", "Security, trust, and lifecycle automation value shared across service providers, registrars, and DNS providers."],
-  ["DNS zone transfer", "Strong migration and customer-acquisition value for the destination DNS provider; portability value for the ecosystem."],
-  ["Domain registration", "Core acquisition value for registrars and embedded-distribution value for service providers and commercial platforms."],
-  ["Registrar transfer", "Core acquisition value for the destination registrar and retention or workflow value for service providers."],
+const operationCategories = [
+  ["DNS configuration", "The proven first use case: automate domain connection and verification through Domain Connect and provider-supported integrations."],
+  ["Domain lifecycle", "Extend automation to DNSSEC, nameserver changes, registration, registrar transfer, and zone transfer."],
+  ["Discovery", "Let services and agents find capabilities, endpoints, providers, and applicable policies through suitable open mechanisms."],
+  ["Authorization", "Support delegated, policy-controlled action across organizational and provider boundaries."],
+  ["Verification", "Make identities, capabilities, requests, and results independently verifiable where the operation requires it."],
+  ["Coordination", "Enable auditable workflows among services, providers, networks, and agents without requiring every operation to use domains or DNS."],
 ];
 
 export default function WhyParticipatePage() {
@@ -58,13 +66,13 @@ export default function WhyParticipatePage() {
 
       <section className={styles.hero}>
         <p className="eyebrow"><span /> Why participate</p>
-        <p>Shared infrastructure creates different value for every participant.</p>
+        <p>Shared infrastructure creates value across domain and agent ecosystems.</p>
       </section>
 
       <article className={styles.document}>
         <h1>Invest where interoperability becomes economic value.</h1>
         <p>
-          The organization implementing a connection and the organization capturing its economic value are not always the same. Seamless gives the ecosystem a way to share implementation costs while each participant benefits through activation, distribution, retention, efficiency, or new commercial opportunity.
+          The organization implementing an operation and the organization capturing its value are not always the same. Seamless gives participants a way to share implementation costs while each benefits through activation, distribution, retention, operational efficiency, trust, or new commercial opportunity.
         </p>
 
         <div className={styles.stakeholderGrid}>
@@ -82,12 +90,12 @@ export default function WhyParticipatePage() {
           ))}
         </div>
 
-        <h2>Value by transaction</h2>
+        <h2>Value by operation category</h2>
         <p>
-          Seamless begins with DNS configuration, but the neutral coordination model is designed to extend across the domain lifecycle.
+          Seamless begins with Domain Connect because it is proven and ready for standards-track adoption. The project is protocol agnostic and will use the open mechanism best suited to each additional operation category.
         </p>
         <div className={styles.transactionList}>
-          {transactions.map(([name, value]) => (
+          {operationCategories.map(([name, value]) => (
             <div key={name}>
               <strong>{name}</strong>
               <p>{value}</p>
@@ -97,18 +105,18 @@ export default function WhyParticipatePage() {
 
         <aside className={styles.callout}>
           <span>Why fund instead of wait?</span>
-          <h2>The buildout determines whether the shared layer exists.</h2>
+          <h2>The buildout determines whether the neutral layer exists.</h2>
           <p>
-            Sponsors provide the concentrated capital needed to establish production infrastructure, provider-supported integrations, and ecosystem adoption. Once the service reaches scale, transparent operating fees can sustain it at a lower marginal cost than repeatedly rebuilding or licensing the same connection layer.
+            Sponsors provide the concentrated capital needed to establish production infrastructure, provider-supported integrations, reusable coordination capabilities, and ecosystem adoption. Once the service reaches scale, transparent operating fees can sustain it at a lower marginal cost than repeatedly rebuilding or licensing the same foundations.
           </p>
         </aside>
 
-        <h2>Commercial opportunity remains open</h2>
+        <h2>Protocol choice and commercial opportunity remain open</h2>
         <p>
-          Seamless is infrastructure, not a mandated end-user product. Organizations may use it directly or build commercial services on top of it. Embedded experiences, enterprise support, monitoring, analytics, security, orchestration, and service-level commitments remain areas for vigorous competition.
+          Seamless is infrastructure, not a mandated protocol or end-user product. Operation categories may use Domain Connect, other standards, or new open interfaces where needed. Organizations may use the shared layer directly or build commercial services on top of it.
         </p>
         <p>
-          The principle is simple: <strong>the common connection path should be neutral; differentiation should happen above it.</strong>
+          Embedded experiences, enterprise support, monitoring, analytics, security, orchestration, and service-level commitments remain areas for vigorous competition. <strong>The common coordination layer should be neutral; differentiation should happen above it.</strong>
         </p>
 
         <div className={styles.inlineActions}>
@@ -120,8 +128,8 @@ export default function WhyParticipatePage() {
       <section className="community-section">
         <div>
           <p className="eyebrow"><span /> Participate your way</p>
-          <h2>Funding, engineering, adoption, and advocacy all matter.</h2>
-          <p>Paid membership supports capitalization. Technical participation remains open and independent.</p>
+          <h2>Funding, engineering, research, adoption, and advocacy all matter.</h2>
+          <p>Paid membership supports capitalization. Technical participation and protocol work remain open and independent.</p>
         </div>
         <div className="community-actions">
           <a className="button button-light" href="https://github.com/seamlessdns" target="_blank" rel="noreferrer">
