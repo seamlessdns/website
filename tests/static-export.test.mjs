@@ -29,7 +29,7 @@ test("exports the support page from the canonical sponsor content", async () => 
   const title = markdown.match(/^#\s+(.+)$/m)?.[1];
   assert.ok(title, "SPONSORS.md must contain an H1");
   assert.match(html, new RegExp(title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-  assert.match(html, /Fund the common layer\. Compete above it\./);
+  assert.match(html, /Fund the neutral layer for automated Internet operations\./);
   assert.match(html, /why-participate/);
   assert.match(html, /toolkit/);
   assert.match(
@@ -45,7 +45,7 @@ test("exports the stakeholder value and champion toolkit pages", async () => {
   ]);
 
   assert.match(whyParticipate, /Invest where interoperability becomes economic value\./);
-  assert.match(whyParticipate, /Commercial opportunity remains open/);
+  assert.match(whyParticipate, /Protocol choice and commercial opportunity remain open/);
   assert.match(toolkit, /The 60-second explanation/);
   assert.match(toolkit, /Technical participation is not a membership benefit\./);
   assert.match(
@@ -56,6 +56,23 @@ test("exports the stakeholder value and champion toolkit pages", async () => {
     toolkit,
     /<link rel="canonical" href="https:\/\/seamlessconnect\.org\/sponsors\/toolkit\/"/,
   );
+});
+
+test("states the full scope and protocol-agnostic approach", async () => {
+  const [homepage, sponsors, whyParticipate, toolkit] = await Promise.all([
+    exportedHtml("index.html"),
+    exportedHtml("sponsors/index.html"),
+    exportedHtml("sponsors/why-participate/index.html"),
+    exportedHtml("sponsors/toolkit/index.html"),
+  ]);
+
+  assert.match(homepage, /protocol best suited to each task/);
+  assert.match(homepage, /may or may not use domains or DNS/);
+  assert.match(sponsors, /protocol agnostic/);
+  assert.match(sponsors, /domain and agent operations/);
+  assert.match(whyParticipate, /Value by operation category/);
+  assert.match(toolkit, /Is Seamless a DNS or domain project\?/);
+  assert.match(toolkit, /Foundation for Agentic Networks/);
 });
 
 test("keeps competitive positioning vendor-neutral", async () => {

@@ -52,7 +52,7 @@ export function SiteFooter({ page }: { page: "home" | "sponsors" }) {
         <span className="wordmark-mark" aria-hidden="true">S</span>
         <span>Seamless</span>
       </Link>
-      <p>Open infrastructure for configuration, discovery, and verification.</p>
+      <p>Open infrastructure for configuration, discovery, authorization, and verification.</p>
       <div className="footer-links">
         <Link href="/sponsors/">Support</Link>
         <a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>

@@ -5,35 +5,35 @@ const githubUrl = "https://github.com/seamlessdns";
 const roadmap = [
   {
     phase: "01 / NOW",
-    title: "Make DNS configuration interoperable",
-    copy: "Operationalize Domain Connect as shared infrastructure with a hosted service, open APIs, SDKs, CLI tooling, registries, and conformance tests.",
-    items: ["Hosted Domain Connect service", "Open SDK, CLI, and API", "Templates and conformance"],
+    title: "Operationalize Domain Connect",
+    copy: "Start with a proven, deployed protocol that is ready for standards-track adoption, and make it broadly useful through shared infrastructure, tooling, registries, and conformance.",
+    items: ["Neutral hosted service", "Open SDK, CLI, and API", "Templates and conformance"],
     active: true,
   },
   {
     phase: "02 / NEXT",
-    title: "Connect the domain lifecycle",
-    copy: "Extend coordination beyond DNS records to DNSSEC, nameserver changes, domain transfers, and zone transfers through open, auditable workflows.",
-    items: ["Automated DNSSEC", "Domain and zone transfer", "Registrar coordination"],
+    title: "Automate domain operations",
+    copy: "Extend coordination beyond DNS records to DNSSEC, nameserver changes, registration, and transfers through open, auditable workflows.",
+    items: ["Automated DNSSEC", "Registration and transfer", "Registrar coordination"],
   },
   {
     phase: "03 / FORWARD",
-    title: "Prepare for an agentic Internet",
-    copy: "Enable authorized, policy-controlled automation so agents and services can publish, discover, verify, and coordinate without creating new control points.",
-    items: ["Agent bootstrap records", "Delegated authorization", "Open discovery patterns"],
+    title: "Enable agentic operations",
+    copy: "Support authorized, policy-controlled discovery, verification, and coordination for agents and services—including operations that may not use domains or DNS.",
+    items: ["Open discovery patterns", "Delegated authorization", "Protocol-appropriate coordination"],
   },
 ];
 
 const principles = [
   ["Open by default", "Specifications, implementations, tests, and registries should be available to every participant."],
-  ["Neutral by design", "No single vendor should control how services connect to domains or how interoperability is measured."],
+  ["Neutral by design", "No single vendor should control how services, providers, and agents coordinate or how interoperability is measured."],
   ["Conformance first", "Objective, reusable tests make compatibility observable and keep integrations dependable at scale."],
   ["Multi-operator", "Infrastructure and artifacts should be portable, mirrorable, and safe to operate independently."],
 ];
 
 function SystemMap() {
   return (
-    <div className="system-map" aria-label="Developers, platforms, and agents connect through Seamless to Internet service providers">
+    <div className="system-map" aria-label="Developers, platforms, and agents coordinate through Seamless with providers and networks">
       <div className="source-row">
         <div className="map-source"><span className="source-icon">&lt;/&gt;</span><span>Developers</span></div>
         <div className="map-source"><span className="source-icon stack-icon">◇</span><span>Platforms</span></div>
@@ -41,18 +41,18 @@ function SystemMap() {
       </div>
       <div className="source-connectors" aria-hidden="true">
         <i /><i /><i />
-        <span>Open protocol</span>
+        <span>Open interfaces</span>
       </div>
       <div className="seamless-node">
         <span className="s-mark" aria-hidden="true">S</span><strong>Seamless</strong>
         <span className="node-role">Coordination layer</span>
       </div>
       <div className="transfer-lanes" aria-hidden="true">
-        <div className="transfer-lane request-lane"><span>Config request</span><i /></div>
-        <div className="transfer-lane response-lane"><span>Provider response</span><i /></div>
+        <div className="transfer-lane request-lane"><span>Authorized request</span><i /></div>
+        <div className="transfer-lane response-lane"><span>Verified response</span><i /></div>
       </div>
       <div className="provider-node">
-        <span className="server-icon" aria-hidden="true"><i /><i /><i /></span><strong>Providers</strong>
+        <span className="server-icon" aria-hidden="true"><i /><i /><i /></span><strong>Providers &amp; networks</strong>
       </div>
     </div>
   );
@@ -68,7 +68,7 @@ export default function Home() {
           <p className="eyebrow"><span /> Open, neutral Internet infrastructure</p>
           <h1>The open connection layer for the Internet.</h1>
           <p className="hero-lede">
-            Seamless gives developers, platforms, and agents a common way to configure domains and coordinate across providers—through open standards, shared tooling, and neutral infrastructure.
+            Seamless gives developers, platforms, and agents a neutral way to automate operations across providers and networks—using open standards, shared tooling, and the protocol best suited to each task.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#building">Explore the roadmap <span aria-hidden="true">↓</span></a>
@@ -78,8 +78,8 @@ export default function Home() {
         <SystemMap />
       </section>
 
-      <div className="dns-strip" aria-label="Seamless starts with DNS configuration, verification, and connection">
-        <div className="dns-intro"><span className="globe-icon" aria-hidden="true">◎</span><strong>Starting with DNS</strong></div>
+      <div className="dns-strip" aria-label="Seamless starts with Domain Connect, then expands to domain and agent operations">
+        <div className="dns-intro"><span className="globe-icon" aria-hidden="true">◎</span><strong>Starting with Domain Connect</strong></div>
         <span><i className="dot dot-green" /> Configure</span>
         <span><i className="dot" /> Verify</span>
         <span><i className="dot dot-blue" /> Connect</span>
@@ -89,7 +89,7 @@ export default function Home() {
         <div className="formation-kicker">Project status</div>
         <div className="formation-item">
           <span className="status status-live">Active</span>
-          <p>Currently supported by the <a href="https://projectnanda.org/" target="_blank" rel="noreferrer">Foundation for Agentic Networks (FAN)</a>, home of the MIT-originated Project NANDA.</p>
+          <p>Working with the <a href="https://projectnanda.org/" target="_blank" rel="noreferrer">Foundation for Agentic Networks (FAN)</a>, home of the MIT-originated Project NANDA, to explore neutral infrastructure for agentic operations that may or may not use domains or DNS.</p>
         </div>
         <div className="formation-item">
           <span className="status status-progress">In formation</span>
@@ -100,27 +100,27 @@ export default function Home() {
       <section className="section problem-section" id="why">
         <div className="section-heading">
           <p className="section-index">01 / Why Seamless</p>
-          <h2>The Internet is connected.<br />Its configuration isn&apos;t.</h2>
+          <h2>The Internet is connected.<br />Its operations aren&apos;t.</h2>
         </div>
         <div className="problem-content">
-          <p className="large-copy">Every platform that connects a domain to a service faces the same fragmented work: discover the provider, explain unfamiliar settings, verify the change, and maintain a growing matrix of integrations.</p>
+          <p className="large-copy">Platforms and agents increasingly need to configure, discover, authorize, verify, and coordinate across organizational boundaries. Today, each operation can require a different provider integration, protocol, or manual workflow.</p>
           <div className="contrast-grid">
             <article>
               <span className="card-label card-label-muted">Today</span>
-              <h3>Every provider is a custom integration.</h3>
+              <h3>Every operation becomes a custom integration.</h3>
               <ul>
-                <li>Manual DNS instructions</li>
+                <li>Manual configuration steps</li>
                 <li>Provider-specific APIs</li>
-                <li>Unclear compatibility</li>
-                <li>Support-heavy onboarding</li>
+                <li>Protocol and provider silos</li>
+                <li>Support-heavy operations</li>
               </ul>
             </article>
             <article className="future-card">
               <span className="card-label">With Seamless</span>
-              <h3>One open layer connects the ecosystem.</h3>
+              <h3>One neutral layer coordinates the ecosystem.</h3>
               <ul>
-                <li>Portable configuration flows</li>
-                <li>Shared standards and tooling</li>
+                <li>Portable operational workflows</li>
+                <li>Protocol-appropriate standards and tooling</li>
                 <li>Objective conformance</li>
                 <li>Provider choice without lock-in</li>
               </ul>
@@ -135,7 +135,7 @@ export default function Home() {
             <p className="section-index">02 / What we&apos;re building</p>
             <h2>Useful now.<br />Designed for what&apos;s next.</h2>
           </div>
-          <p>Seamless begins with the proven Domain Connect ecosystem, then expands the same open coordination model across the domain lifecycle and into agent-native workflows.</p>
+          <p>Seamless begins with Domain Connect because it has proven utility and standards-track readiness. The project is protocol agnostic: each category of domain or agent operation should use the open mechanism best suited to it.</p>
         </div>
 
         <div className="roadmap">
@@ -156,8 +156,8 @@ export default function Home() {
           <span className="callout-mark">D/C</span>
           <div>
             <p className="section-index">Standards in motion</p>
-            <h3>Built on Domain Connect. Advancing through the IETF.</h3>
-            <p>Domain Connect is a deployed open protocol for configuring DNS across software services and DNS providers. The IETF DCONN Working Group is standardizing the protocol while protecting interoperability with today&apos;s ecosystem.</p>
+            <h3>Starting with a proven protocol. Not limited to one.</h3>
+            <p>Domain Connect is a deployed open protocol for configuring DNS across software services and DNS providers, and the IETF DCONN Working Group is advancing it on the standards track. Seamless will build from that practical starting point while selecting the most suitable open protocols and interfaces for other domain and agent operations.</p>
           </div>
           <div className="callout-links">
             <a href="https://www.domainconnect.org/" target="_blank" rel="noreferrer">Domain Connect <ExternalArrow /></a>
@@ -172,7 +172,7 @@ export default function Home() {
             <p className="section-index">03 / Governance</p>
             <h2>Infrastructure no one<br />company can capture.</h2>
           </div>
-          <p>Interoperability works when participation stays open, technical decisions remain transparent, and the shared layer can be trusted by competitors and collaborators alike.</p>
+          <p>Coordination works when participation stays open, technical decisions remain transparent, and the shared layer can support multiple protocols without becoming a new control point.</p>
         </div>
         <div className="principles-grid">
           {principles.map(([title, copy], index) => (
@@ -191,9 +191,9 @@ export default function Home() {
 
       <section className="community-section" id="community">
         <div>
-          <p className="eyebrow"><span /> Build the connection layer with us</p>
+          <p className="eyebrow"><span /> Build the coordination layer with us</p>
           <h2>Help make Internet coordination seamless.</h2>
-          <p>We&apos;re bringing together service platforms, DNS providers, registrars, standards contributors, and open-source developers to build shared infrastructure in the open.</p>
+          <p>We&apos;re bringing together service platforms, DNS providers, registrars, agent networks, standards contributors, and open-source developers to automate cross-provider operations in the open.</p>
         </div>
         <div className="community-actions">
           <a className="button button-light" href={githubUrl} target="_blank" rel="noreferrer">Join on GitHub <ExternalArrow /></a>
