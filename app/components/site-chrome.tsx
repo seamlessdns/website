@@ -28,7 +28,7 @@ export function SiteHeader({ page }: { page: "home" | "sponsors" }) {
             {label}
           </Link>
         ))}
-        {page === "home" && <Link href="/sponsors/">Sponsor</Link>}
+        <Link href="/sponsors/">Support</Link>
       </nav>
       <a
         className="button button-small button-outline"
@@ -54,6 +54,7 @@ export function SiteFooter({ page }: { page: "home" | "sponsors" }) {
       </Link>
       <p>Open infrastructure for configuration, discovery, and verification.</p>
       <div className="footer-links">
+        <Link href="/sponsors/">Support</Link>
         <a href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>
         <a href="https://www.domainconnect.org/" target="_blank" rel="noreferrer">Domain Connect</a>
         <a href="https://datatracker.ietf.org/wg/dconn/about/" target="_blank" rel="noreferrer">IETF</a>
