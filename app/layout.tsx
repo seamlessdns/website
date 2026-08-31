@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   title: "Seamless — The open connection layer for the Internet",
   description:
-    "Open, neutral infrastructure for configuring domains and coordinating services across providers.",
+    "Open, neutral infrastructure for automating domain and agent operations across providers and networks.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
